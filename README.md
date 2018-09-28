@@ -1,6 +1,6 @@
 # CSCI-3308-Project
 
-## Crime Avoidance Map Denver
+## Crime Avoidance Map: Denver
 
 Justin Teufel, Levi Nickerson, and Steve Su 
 
