@@ -30,7 +30,7 @@ All of these problems will produce a well rounded project that will give us the 
   - Be consistent with meetings 
   
 ### Development Stategy 
-We have decided to utilize a scrum development strategy. We plan on having scrums that last two weeks. We plan on meeting weekly because it seems impracticle to have daily scrum meetings. However, we will send out email updates at least two times a week to inform the team about current progress. 
+We have decided to utilize a scrum development strategy. We plan on having sprints that last two weeks. We plan on meeting weekly because it seems impracticle to have daily scrum meetings. However, we will send out email updates at least two times a week to inform the team about current progress. 
 
 ### Project Tracking Software
 We are going to use Trello to track our project progress. https://trello.com/b/3P3gsQm5/crime-visualization-report-denver-metro 
