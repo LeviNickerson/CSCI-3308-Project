@@ -4,7 +4,7 @@ def get_map_data(input_string):
     export_file = open(input_string, "r")
     #get all lines from file
     raw_data = export_file.readlines()
-    #amount var is the amount of seats in out spreadsheet (-1 subtracts header)
+    #amount var is the amount of items in out spreadsheet (-1 subtracts header)
     amount = len(raw_data) - 1
     #parse header and get columns
     titles = parse_header(raw_data[0])
@@ -15,19 +15,22 @@ def get_map_data(input_string):
 
     #Place all data on coresponding lists
 
-    output_data["IDX_List"] = transpose(data,titles["IDX"])
-    output_data["X_Coor_List"] = transpose(data,titles["X_Coor"])
-    output_data["Y_Coor_List"] = transpose(data,titles["Y_Coor"])
-    output_data["Z_Coor_List"] = transpose(data,titles["Z_Coor"])
-    output_data["Distance_List"] = transpose(data,titles["Distance"])
+    #Location info
+    output_data["geoX_List"] = transpose(data,titles["GEO_X"])
+    output_data["geoY_List"] = transpose(data,titles["GEO_Y"])
+    output_data["LON_List"] = transpose(data,titles["GEO_LON"])
+    output_data["LAT_List"] = transpose(data,titles["GEO_LAT"])
+
+    #Crime info
+    output_data["OffenseType_List"] = transpose(data,titles["OFFENSE_TYPE_ID"])
 
 
-    #convert all strings in the following lists to ints
-    for i in ["X_Coor_List","Y_Coor_List","Z_Coor_List","Distance_List"]:
+    #convert all strings in the following lists to floats
+    for i in ["geoX_List","geoY_List","LON_List","LAT_List"]:
         output_data[i] = convertlist_float(output_data[i])
 
     #convert strings in the following lists to ints
-    for i in ["IDX_List"]:
+    for i in ["OffenseType_List"]:
         output_data[i] = convertlist_int(output_data[i])
 
     return output_data
@@ -89,7 +92,7 @@ def convertlist_float(input_list):
     return input_list
 
 def map_to_idx(idx_List):
-    #creats a dictionary to associate seat values to lists
+    #creats a dictionary to associate values to lists
     mapped_idx_list = {}
     for i, n in enumerate(idx_List):
         mapped_idx_list[n] = i
