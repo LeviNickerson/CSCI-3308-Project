@@ -6,7 +6,7 @@ def makehtml(resultInput, htmlInput):
   #if f.mode == "r":
   contentResult = fResult.read()
   contentHtml = fHtml.read()
-  print(contentResult)  #this line for testing only
+  #print(contentResult)  #this line for testing only
   
   f = open('dencrime.html', 'w')
   f.write(contentHtml)
@@ -16,7 +16,9 @@ def makehtml(resultInput, htmlInput):
 
   f.write(message)
   f.close()
+  fResult.close()
+  fHtml.close()
   return 0
 
-makehtml("userResult.txt","htmlInputfile.html")
+#makehtml("userResult.txt","htmlInputfile.html")
 
