@@ -6,7 +6,7 @@
   Interface testing
   
 ### Description
-   Perform tests to check makehtml() functionality:
+   Perform tests to check makehtml() functionality which is located in the htmlmake.py file:
    1) userResult.txt file should exist
    2) htmlInputfile.html should exist 3) the userResult.txt file gets
    appended to the htmlInputfile.html file
@@ -22,7 +22,8 @@
   dencrime.html is created with result file appended to it
   
 ### Actual result
-  All tests run and pass
+  1) the files userResult.txt and htmlInputfile.html exists
+  2) a new html page called dencrime.html is created with results from userResult.txt appended to it 
   
 ### Status (Pass/Fail)
   Pass
