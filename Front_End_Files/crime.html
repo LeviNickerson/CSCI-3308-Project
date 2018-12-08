@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="crime.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Arial";
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("cover.jpg");
+  height: 100%;
+  opacity: 0.9;
+}
+
+.bgimg-2 {
+  background-image: url("Denver_Background.jpg");
+  height: 100%;
+  opacity: 0.9;
+}
+
+.bgimg-3 {
+  background-image: url("Denver_backgroundtest.jpg");
+  height: 100%;
+  opacity: 0.7;
+}
+
+.caption-1 {
+  position: absolute;
+  opacity: 1.0;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-family: "Arial";
+  color: #000;
+}
+
+.caption-1 span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+.caption-2 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption-2 span.border {
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 8px;
+}
+
+.vertical-menu {
+}
+
+.vertical-menu button {
+    background-color: #eee;
+    border: none;
+    width: 200px;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.vertical-menu button:hover {
+    background-color: #b3ffff;
+}
+
+p{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font: 12px "Lato", sans-serif;
+  color: #111;
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg-1">
+
+  <div class="caption-1">
+    <span class="border">DENVER</span><br>
+    <span class="border">CRIME AVOIDENCE</span>
+  </div>
+</div>
+
+</body>
+<body>
+
+<p style="padding:70px 70px ; height: 100%">
+  <br> A Tool for safe living in Denver, Colorado </br>
+  <br> Project by Steven, Levi, and Justin. </br>
+  <br> Scroll Down </br>
+</p>
+
+</body>
+<body>
+
+<div id=image class="bgimg-2">
+  <div class="caption-2">
+    <span id='display_text' class="border"></span><br>
+  </div>
+
+  <div class="vertical-menu">
+    <button id='b' type="button" onclick="change_n_Selection('b')";>Neighboorhood 1</button>
+    <button id='b_two' type="button" onclick="change_n_Selection('b_two')";>Neighboorhood 2</button>
+    <button id='b_three' type="button" onclick="change_n_Selection('b_three')";>Neighboorhood 3</button>
+    <button id='b_four' type="button" onclick="change_n_Selection('b_four')";>Neighboorhood 4</button>
+    <button id='b_five' type="button" onclick="change_n_Selection('b_five')";>Neighboorhood 5</button>
+
+    <button id='c_one' type="button" onclick="change_c_Selection('c_one')";>Crime 1</button>
+    <button id='c_two' type="button" onclick="change_c_Selection('c_two')";>Crime 2</button>
+    <button id='c_three' type="button" onclick="change_c_Selection('c_three')";>Crime 3</button>
+
+    <button id='data' type="button" onclick="return_data()";>Get Data</button>
+
+  </div>
+
+</div>
+
+</body>
+
+<footer>
+  <p style="padding:10px">A project for CSCI 3308</p>
+</footer>
+
+</html>
