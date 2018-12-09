@@ -38,3 +38,24 @@ function change_c_Selection(btn) {
 
            }
       }
+
+function return_data() {
+
+    if (n_button_bool == true && c_button_bool == true){
+
+      document.getElementById('display_text').innerHTML = "SUCCESS"
+
+    }else{
+
+      document.getElementById('display_text').innerHTML = "SELECT BOTH A NEIGHBOORHOOD AND CRIME"
+
+    }
+
+    }
+
+
+function print_results() {
+
+  document.getElementById('display_text').innerHTML = "SUCCESS"
+
+                        }
