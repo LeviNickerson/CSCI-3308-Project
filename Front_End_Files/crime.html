@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="crime.js"></script>
+<script src="../static/Front_End_Files/crime.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body, html {
@@ -19,19 +19,19 @@ body, html {
 
 }
 .bgimg-1 {
-  background-image: url("cover.jpg");
+  background-image: url("../static/Front_End_Files/cover.jpg");
   height: 100%;
   opacity: 0.9;
 }
 
 .bgimg-2 {
-  background-image: url("Denver_Background.jpg");
+  background-image: url("../static/Front_End_Files/Denver_Background.jpg");
   height: 100%;
   opacity: 0.9;
 }
 
 .bgimg-3 {
-  background-image: url("Denver_backgroundtest.jpg");
+  background-image: url("../static/Front_End_Files/Denver_Background.jpg");
   height: 100%;
   opacity: 0.7;
 }
@@ -68,6 +68,17 @@ body, html {
   padding: 10px;
   font-size: 18px;
   letter-spacing: 8px;
+}
+
+.chart {
+  background-color: #eee;
+  bottom: 0;
+  opacity:.6;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  padding: 14px 16px;
+
 }
 
 .vertical-menu {
@@ -108,6 +119,7 @@ p{
 </div>
 
 </body>
+
 <body>
 
 <p style="padding:70px 70px ; height: 100%">
@@ -120,9 +132,7 @@ p{
 <body>
 
 <div id=image class="bgimg-2">
-  <div class="caption-2">
-    <span id='display_text' class="border"></span><br>
-  </div>
+
 
   <div class="vertical-menu">
     <button id='n_one' type="button" onclick="change_n_Selection('n_one'); set_n_input('nieghboorhood_one')";>Neighboorhood 1</button>
@@ -131,20 +141,26 @@ p{
     <button id='n_four' type="button" onclick="change_n_Selection('n_four'); set_n_input('nieghboorhood_four')";>Neighboorhood 4</button>
     <button id='n_five' type="button" onclick="change_n_Selection('n_five'); set_n_input('nieghboorhood_five')";>Neighboorhood 5</button>
 
-    <button id='c_one' type="button" onclick="change_c_Selection('c_one')";>Crime 1</button>
-    <button id='c_two' type="button" onclick="change_c_Selection('c_two')";>Crime 2</button>
-    <button id='c_three' type="button" onclick="change_c_Selection('c_three')";>Crime 3</button>
+    <button id='c_one' type="button" onclick="change_c_Selection('c_one'); set_c_input('Crime_One')";>Crime 1</button>
+    <button id='c_two' type="button" onclick="change_c_Selection('c_two'); set_c_input('Crime_Two')";>Crime 2</button>
+    <button id='c_three' type="button" onclick="change_c_Selection('c_three'); set_c_input('Crime_Three')";>Crime 3</button>
 
     <button id='data' type="button" onclick="return_data()";>Get Data</button>
 
+
   </div>
+
+  <div class="chart">
+    <p id='display_text'></p>
+  </div>
+
 
 </div>
 
 </body>
 
 <footer>
-  <p style="padding:10px">A project for CSCI 3308</p>
+  <p style="padding:10px">A project for CSCI 3308</p1>
 </footer>
 
 </html>
