@@ -12,22 +12,22 @@ var data = {
 "nieghboorhood_one":{
   "Crime_One":"This is the data on crime one in neighboorhood one",
   "Crime_Two":"This is the data on crime two in neighboorhood one",
-  "Crime_Three":"This is the data on crime one in neighboorhood one"
+  "Crime_Three":"This is the data on crime three in neighboorhood one"
 },
 "nieghboorhood_two":{
   "Crime_One":"This is the data on crime one in neighboorhood two",
   "Crime_Two":"This is the data on crime two in neighboorhood two",
-  "Crime_Three":"This is the data on crime one in neighboorhood two"
+  "Crime_Three":"This is the data on crime three in neighboorhood two"
 },
 "nieghboorhood_three":{
   "Crime_One":"This is the data on crime one in neighboorhood three",
   "Crime_Two":"This is the data on crime two in neighboorhood three",
-  "Crime_Three":"This is the data on crime one in neighboorhood three"
+  "Crime_Three":"This is the data on crime three in neighboorhood three"
 },
 "nieghboorhood_four":{
   "Crime_One":"This is the data on crime one in neighboorhood four",
   "Crime_Two":"This is the data on crime two in neighboorhood four",
-  "Crime_Three":"This is the data on crime one in neighboorhood four"
+  "Crime_Three":"This is the data on crime three in neighboorhood four"
 },
 "nieghboorhood_five":{
   "Crime_One":"This is the data on crime one in neighboorhood five",
@@ -80,7 +80,7 @@ function return_data() {
       var crime_input = ""
 
       var neighboorhood_data = data[n_input]
-      var crime_data = neighboorhood_data["Crime_One"]
+      var crime_data = neighboorhood_data[c_input]
 
       document.getElementById('display_text').innerHTML = crime_data
 
