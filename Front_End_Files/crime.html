@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="../static/Front_End_Files/data.js"></script>
 <script src="../static/Front_End_Files/crime.js"></script>
+
+<script>
+
+assign(load());
+
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body, html {
@@ -73,7 +81,7 @@ body, html {
 .chart {
   background-color: #eee;
   bottom: 0;
-  opacity:.6;
+  opacity: 0;
   width: 100%;
   position: absolute;
   text-align: center;
@@ -107,6 +115,7 @@ p{
   color: #111;
 }
 </style>
+
 </head>
 <body>
 
@@ -122,35 +131,49 @@ p{
 
 <body>
 
-<p style="padding:70px 70px ; height: 100%">
-  <br> A Tool for safe living in Denver, Colorado </br>
-  <br> Project by Steven, Levi, and Justin. </br>
-  <br> Scroll Down </br>
-</p>
+  <div style='position:relative; background-position:center; background-color:#eee; background-size:cover; height: 100%;'>
+
+    <div style='position: absolute; top: 40%; width: 100%;text-align: center;'>
+      <p>
+        <br> A Tool for safe living in Denver, Colorado </br>
+        <br> Project by Steven, Levi, and Justin. </br>
+        <br> Scroll Down </br>
+
+      </p>
+    </div>
+  </div>
 
 </body>
+
 <body>
 
 <div id=image class="bgimg-2">
 
 
   <div class="vertical-menu">
-    <button id='n_one' type="button" onclick="change_n_Selection('n_one'); set_n_input('nieghboorhood_one')";>Neighboorhood 1</button>
-    <button id='n_two' type="button" onclick="change_n_Selection('n_two'); set_n_input('nieghboorhood_two')";>Neighboorhood 2</button>
-    <button id='n_three' type="button" onclick="change_n_Selection('n_three'); set_n_input('nieghboorhood_three')";>Neighboorhood 3</button>
-    <button id='n_four' type="button" onclick="change_n_Selection('n_four'); set_n_input('nieghboorhood_four')";>Neighboorhood 4</button>
-    <button id='n_five' type="button" onclick="change_n_Selection('n_five'); set_n_input('nieghboorhood_five')";>Neighboorhood 5</button>
 
-    <button id='c_one' type="button" onclick="change_c_Selection('c_one'); set_c_input('Crime_One')";>Crime 1</button>
-    <button id='c_two' type="button" onclick="change_c_Selection('c_two'); set_c_input('Crime_Two')";>Crime 2</button>
-    <button id='c_three' type="button" onclick="change_c_Selection('c_three'); set_c_input('Crime_Three')";>Crime 3</button>
+    <div style='position:relative; height:10px; opacity:0'></div>
+
+    <button id='n_one' type="button" onclick="change_n_Selection('n_one'); set_n_input('auraria')";>Auraria</button>
+    <button id='n_two' type="button" onclick="change_n_Selection('n_two'); set_n_input('capitol_hill')";>Capitol Hill</button>
+    <button id='n_three' type="button" onclick="change_n_Selection('n_three'); set_n_input('cbd')";>CBD</button>
+    <button id='n_four' type="button" onclick="change_n_Selection('n_four'); set_n_input('civic_center')";>Civic Center</button>
+    <button id='n_five' type="button" onclick="change_n_Selection('n_five'); set_n_input('lincoln_park')";>Lincoln Park</button>
+
+    <div style='position:relative; height:10px; opacity:0'></div>
+
+    <button id='c_one' type="button" onclick="change_c_Selection('c_one'); set_c_input('aggravated-assault')";>Aggravated-Assault</button>
+    <button id='c_two' type="button" onclick="change_c_Selection('c_two'); set_c_input('drug-alcohol')";>Drug-Alcohol</button>
+    <button id='c_three' type="button" onclick="change_c_Selection('c_three'); set_c_input('robbery')";>Robbery</button>
+
+    <div style='position:relative; height:40px; opacity:0'></div>
 
     <button id='data' type="button" onclick="return_data()";>Get Data</button>
 
 
   </div>
 
-  <div class="chart">
+  <div id='chart' class="chart">
     <p id='display_text'></p>
   </div>
 

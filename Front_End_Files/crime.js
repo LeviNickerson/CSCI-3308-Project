@@ -8,35 +8,8 @@ var c_button_selected = "";
 var n_input= "";
 var c_input= "";
 
-var data = {
-"nieghboorhood_one":{
-  "Crime_One":"This is the data on crime one in neighboorhood one",
-  "Crime_Two":"This is the data on crime two in neighboorhood one",
-  "Crime_Three":"This is the data on crime three in neighboorhood one"
-},
-"nieghboorhood_two":{
-  "Crime_One":"This is the data on crime one in neighboorhood two",
-  "Crime_Two":"This is the data on crime two in neighboorhood two",
-  "Crime_Three":"This is the data on crime three in neighboorhood two"
-},
-"nieghboorhood_three":{
-  "Crime_One":"This is the data on crime one in neighboorhood three",
-  "Crime_Two":"This is the data on crime two in neighboorhood three",
-  "Crime_Three":"This is the data on crime three in neighboorhood three"
-},
-"nieghboorhood_four":{
-  "Crime_One":"This is the data on crime one in neighboorhood four",
-  "Crime_Two":"This is the data on crime two in neighboorhood four",
-  "Crime_Three":"This is the data on crime three in neighboorhood four"
-},
-"nieghboorhood_five":{
-  "Crime_One":"This is the data on crime one in neighboorhood five",
-  "Crime_Two":"This is the data on crime two in neighboorhood five",
-  "Crime_Three":"This is the data on crime one in neighboorhood five"
-}
-
-};
-
+var loaded = false;
+var data = {};
 
 
 function change_n_Selection(btn) {
@@ -74,7 +47,7 @@ function change_c_Selection(btn) {
 
 function return_data() {
 
-    if (n_button_bool == true && c_button_bool == true){
+  if (n_button_bool == true && c_button_bool == true){
 
       var neighboorhood_input = ""
       var crime_input = ""
@@ -82,19 +55,58 @@ function return_data() {
       var neighboorhood_data = data[n_input]
       var crime_data = neighboorhood_data[c_input]
 
-      document.getElementById('display_text').innerHTML = crime_data
+      var num_crimes = crime_data.length
 
-    }else{
+      if (num_crimes == 0){
 
+        to_write = "No Crimes Reported"
+
+      }else{
+
+        var to_write = ""
+
+        for (var i = 0; i <num_crimes; i++) {
+
+          to_write +=  "<br>"+crime_data[i]+"</br>"
+
+          }
+        }
+
+      show_chart()
+      document.getElementById('display_text').innerHTML = to_write
+
+  }else{
+
+      show_chart()
       document.getElementById('display_text').innerHTML = "SELECT BOTH A NEIGHBOORHOOD AND CRIME"
 
-    }
+  }
 
-    }
+
+
+}
+
+function assign(input) {
+
+  if (loaded == false){
+
+     //data = input;
+     data = JSON.parse(input);
+     loaded = true;
+  }
+
+}
+
+
+function show_chart() {
+
+  document.getElementById('chart').style.opacity = "0.5";
+
+}
 
 function set_n_input(input_string) {
 
-  n_input= input_string;
+  n_input = input_string;
 
 }
 
