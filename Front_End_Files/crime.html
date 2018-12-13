@@ -8,6 +8,7 @@
 
 assign(load());
 
+
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +20,7 @@ body, html {
   color: #777;
 }
 
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bghighlight-1, .bghighlight-2, .bghighlight-3, .bghighlight-4, .bghighlight-5 {
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,7 +42,37 @@ body, html {
 .bgimg-3 {
   background-image: url("../static/Front_End_Files/Denver_Background.jpg");
   height: 100%;
-  opacity: 0.7;
+  opacity: 0.9;
+}
+
+.bghighlight-1 {
+  background-image: url("../static/Front_End_Files/Neighboorhoods/Auroria.jpg");
+  height: 100%;
+  opacity: 0.9;
+}
+
+.bghighlight-2 {
+  background-image: url("../static/Front_End_Files/Neighboorhoods/Capitol_HIll.jpg");
+  height: 100%;
+  opacity: 0.9;
+}
+
+.bghighlight-3 {
+  background-image: url("../static/Front_End_Files/Neighboorhoods/CBD.jpg");
+  height: 100%;
+  opacity: 0.9;
+}
+
+.bghighlight-4 {
+  background-image: url("../static/Front_End_Files/Neighboorhoods/Civic_Center.jpg");
+  height: 100%;
+  opacity: 0.9;
+}
+
+.bghighlight-5 {
+  background-image: url("../static/Front_End_Files/Neighboorhoods/Lincoln_Park.jpg");
+  height: 100%;
+  opacity: 0.9;
 }
 
 .caption-1 {
@@ -85,35 +116,113 @@ body, html {
   width: 100%;
   position: absolute;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 10px;
+
+}
+
+.maphead {
+  background-color: #eee;
+  top: 0;
+  opacity: .9;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  padding: 12px 12px;
 
 }
 
 .vertical-menu {
+
+  position:relative
 }
 
 .vertical-menu button {
+
+
     background-color: #eee;
     border: none;
     width: 200px;
     color: black;
+    font-weight: bold;
     display: block;
     padding: 12px;
     text-decoration: none;
     opacity: 0.8;
+    transition: all 0.2s;
 }
 
 .vertical-menu button:hover {
-    background-color: #b3ffff;
+
+  background-color: #e6ffff;
+
 }
 
-p{
+.vertical-menu2 {
+
+}
+
+.vertical-menu2 button {
+
+    background-color: #99d6ff;
+    border: none;
+    width: 200px;
+    color: black;
+    font-weight: bold;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.2s;
+}
+
+.vertical-menu2 button:hover {
+
+  background-color: #66c2ff;
+
+}
+
+.vertical-menu3 {
+
+}
+
+.vertical-menu3 button {
+
+    background-color: #00ffff;
+    border: none;
+    width: 200px;
+    color: black;
+    font-weight: bold;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: all 0.2s;
+}
+
+.vertical-menu3 button:hover {
+
+  background-color: #dc143c;
+
+}
+
+.p1{
   letter-spacing: 5px;
   text-transform: uppercase;
   text-align: center;
   font: 12px "Lato", sans-serif;
   color: #111;
+  transition: all 0.5s;
 }
+
+.p2{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font: 10px "Lato", sans-serif;
+  color: #111;
+  transition: all 0.5s;
+}
+
 </style>
 
 </head>
@@ -134,7 +243,7 @@ p{
   <div style='position:relative; background-position:center; background-color:#eee; background-size:cover; height: 100%;'>
 
     <div style='position: absolute; top: 40%; width: 100%;text-align: center;'>
-      <p>
+      <p class="p1">
         <br> A Tool for safe living in Denver, Colorado </br>
         <br> Project by Steven, Levi, and Justin. </br>
         <br> Scroll Down </br>
@@ -149,10 +258,16 @@ p{
 
 <div id=image class="bgimg-2">
 
+  <div class="maphead">
+
+      <p class="p1"> SELECT NEIGHHBOORHOOD AND CRIME FROM LIST BELOW</p>
+
+  </div>
+
 
   <div class="vertical-menu">
 
-    <div style='position:relative; height:10px; opacity:0'></div>
+    <div style='position:relative; height:62px; opacity:0'></div>
 
     <button id='n_one' type="button" onclick="change_n_Selection('n_one'); set_n_input('auraria')";>Auraria</button>
     <button id='n_two' type="button" onclick="change_n_Selection('n_two'); set_n_input('capitol_hill')";>Capitol Hill</button>
@@ -160,21 +275,30 @@ p{
     <button id='n_four' type="button" onclick="change_n_Selection('n_four'); set_n_input('civic_center')";>Civic Center</button>
     <button id='n_five' type="button" onclick="change_n_Selection('n_five'); set_n_input('lincoln_park')";>Lincoln Park</button>
 
-    <div style='position:relative; height:10px; opacity:0'></div>
+  </div>
+
+  <div class="vertical-menu2">
+
 
     <button id='c_one' type="button" onclick="change_c_Selection('c_one'); set_c_input('aggravated-assault')";>Aggravated-Assault</button>
     <button id='c_two' type="button" onclick="change_c_Selection('c_two'); set_c_input('drug-alcohol')";>Drug-Alcohol</button>
     <button id='c_three' type="button" onclick="change_c_Selection('c_three'); set_c_input('robbery')";>Robbery</button>
 
+
+  </div>
+
+  <div class="vertical-menu3">
+
     <div style='position:relative; height:40px; opacity:0'></div>
 
-    <button id='data' type="button" onclick="return_data()";>Get Data</button>
+    <button id='data' type="button" onclick="return_data()";>GET DATA</button>
 
 
   </div>
 
+
   <div id='chart' class="chart">
-    <p id='display_text'></p>
+    <p id='display_text' class="p2"></p>
   </div>
 
 
@@ -183,7 +307,7 @@ p{
 </body>
 
 <footer>
-  <p style="padding:10px">A project for CSCI 3308</p1>
+  <p class="p1" style="padding:10px">A project for CSCI 3308</p1>
 </footer>
 
 </html>

@@ -11,39 +11,72 @@ var c_input= "";
 var loaded = false;
 var data = {};
 
+var map_images = {"n_one":"bghighlight-1","n_two":"bghighlight-2","n_three":"bghighlight-3","n_four":"bghighlight-4", "n_five":"bghighlight-5"}
+
 
 function change_n_Selection(btn) {
     var n_button = document.getElementById(btn);
+    var image = document.getElementById("image");
       if (n_button_bool == false) {
           n_button.style.backgroundColor = "#0066ff"
           n_button_bool = true;
           n_button_selected = n_button
+          image.classList.remove("bgimg-2");
+          //image.classList.add("bgimg-3");
+
       }
       else {
 
           n_button_selected.style.backgroundColor = "#eee"
           n_button.style.backgroundColor = "#0066ff"
+          image.classList.remove(map_images[n_button_selected.id])
           n_button_selected = n_button
 
         }
+
+
+      image.classList.add(map_images[btn]);
    }
 
 function change_c_Selection(btn) {
 
     var c_button = document.getElementById(btn);
         if (c_button_bool == false) {
-            c_button.style.backgroundColor = "#0066ff"
+            c_button.style.backgroundColor = "#0099ff"
             c_button_bool = true;
             c_button_selected = c_button
          }
         else {
 
-            c_button_selected.style.backgroundColor = "#eee"
-            c_button.style.backgroundColor = "#0066ff"
+            c_button_selected.style.backgroundColor = "#99d6ff"
+            c_button.style.backgroundColor = "#0099ff"
             c_button_selected = c_button
 
            }
       }
+
+function color_buttons_on_hover() {
+
+    var button = document.getElementById("n_one");
+    button.addEventListener("mouseover", hover_color(button));
+    //button.addEventListener("mouseout", change_hover_color(button));
+
+    function hover_color(btn){
+
+        var but = document.getElementById(btn.id);
+        but.style.backgroundColor = "#b3ffff";
+
+    }
+
+    function change_hover_color(btn){
+
+        var but = document.getElementById(btn.id);
+        but.style.backgroundColor = "#eee";
+
+    }
+
+  }
+
 
 function return_data() {
 
