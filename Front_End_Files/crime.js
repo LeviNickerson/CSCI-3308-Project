@@ -119,21 +119,19 @@ function return_data() {
 
 }
 
-function assign(input) {
-
-  if (loaded == false){
-
-     //data = input;
-     data = JSON.parse(input);
-     loaded = true;
-  }
-
-}
 
 
 function show_chart() {
 
-  document.getElementById('chart').style.opacity = "0.5";
+  document.getElementById('chart').style.opacity = "0.7";
+  document.getElementById('chart_x').style.opacity = "0.7";
+
+}
+
+function close_chart() {
+
+  document.getElementById('display_text').innerHTML = "CHECK FOR MORE CRIMES";
+  document.getElementById('chart_x').style.opacity = "0.0";
 
 }
 
@@ -146,5 +144,16 @@ function set_n_input(input_string) {
 function set_c_input(input_string) {
 
   c_input= input_string;
+
+}
+
+function assign(input) {
+
+  if (loaded == false){
+
+     //data = input;
+     data = JSON.parse(input);
+     loaded = true;
+  }
 
 }
